@@ -26,19 +26,19 @@ base_url = 'https://www.ratebeer.com'
 countries = [
 
     {
-        'name': 'northernireland',
+        'name': 'Northern Ireland',
         'code': '238'
     },
     {
-        'name': 'england',
+        'name': 'England',
         'code': '240'
     },
     {
-        'name': 'scotland',
+        'name': 'Scotland',
         'code': '241'
     },
     {
-        'name': 'wales',
+        'name': 'Wales',
         'code': '239'
     },
 ]
