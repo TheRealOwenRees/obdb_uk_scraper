@@ -39,7 +39,7 @@ class Brewery:
         postcode = brewery_details['address'].split(',')[-2].strip()
         city = self.city.split(',')[0]
         county = brewery_details['address'].split(',')[-3].strip()
-        coordinates = get_brewery_coordinates(address, postcode, self.country)
+        coordinates = get_brewery_coordinates(self.name, address, postcode, self.country)
 
         return {
             'name': self.name,
