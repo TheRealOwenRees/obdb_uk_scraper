@@ -34,16 +34,33 @@ class Brewery:
             'telephone': telephone
         }
 
+    def rename_brewery_type(self):
+        if self.type == 'Microbrewery':
+            self.type = 'micro'
+        elif self.type == 'Brewpub':
+            self.type = 'brewpub'
+        elif self.type == 'Brewpub/Brewery':
+            self.type = 'brewpub'
+        elif self.type == 'Client Brewer':
+            self.type = 'contract'
+        elif self.type == 'Contract Brewer':
+            self.type = 'contract'
+        elif self.type == 'Commercial Brewery':
+            self.type = 'commercial'
+        elif self.type == 'Commissioner':
+            self.type = 'commercial'
+
     def format_data(self, brewery_details):
         address = ','.join(brewery_details['address'].split(',')[0: -4])
         postcode = brewery_details['address'].split(',')[-2].strip()
         city = self.city.split(',')[0]
         county = brewery_details['address'].split(',')[-3].strip()
+        self.rename_brewery_type()
         coordinates = get_brewery_coordinates(self.name, address, postcode, self.country)
 
         return {
             'name': self.name,
-            'brewery_type': self.type.lower(),
+            'brewery_type': self.type,
             'address 1': address,
             'address 2': None,
             'address 3': None,
